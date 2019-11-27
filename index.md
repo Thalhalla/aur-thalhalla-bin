@@ -2,7 +2,7 @@
 title: "AURCI"
 ---
 
-[![Build Status]](https://travis-ci.com/{{ site.github.owner_name }}/aurci)
+[![Build Status]](https://travis-ci.com/{{ site.github.owner_name }}/{{ site.github.project_title }})
 
 Use [Travis CI] for building and packaging a few [AUR] packages and deploy them
 to [GitHub Releases] so it can be used as repository in [Arch Linux].
@@ -12,25 +12,25 @@ to [GitHub Releases] so it can be used as repository in [Arch Linux].
 To use as custom repository in [Arch Linux], add to file `/etc/pacman.conf`:
 
 ```bash
-[aurci]
+[{{ site.github.project_title }}]
 SigLevel = Optional TrustAll
-Server = {{ site.github.owner_url }}/aurci/releases/download/repository
+Server = {{ site.github.owner_url }}/{{ site.github.project_title }}/releases/download/repository
 ```
 
 Then on the command line:
 
 ```bash
-pacman -Sy            # Refresh package database.
-pacman -Sl aurci      # Show packages in repository.
-pacman -S {package}   # Install a package.
+pacman -Syu                                # Refresh package database.
+pacman -Sl {{ site.github.project_title }} # Show packages in repository.
+pacman -S {package}                        # Install a package.
 ```
 
 **NOTE:** List of currently maintained packages can change at any moment.
 
 ## Forking repository
 
-For build the [AUR](https://aur.archlinux.org) packages of your election fork
-this repository and enable [Travis CI](https://travis-ci.com):
+For build the [AUR] packages of your election fork this repository and enable
+[Travis CI GitHub App]:
 
 ```
 - Fork this GitHub repository and edit `pkglist`.
@@ -44,7 +44,7 @@ this repository and enable [Travis CI](https://travis-ci.com):
 
 [Arch Linux]:      https://www.archlinux.org
 [AUR]:             https://aur.archlinux.org
-[Build Status]:    https://travis-ci.com/{{ site.github.owner_name }}/aurci.svg?branch=master
-[Travis CI]:       https://travis-ci.com/{{ site.github.owner_name }}/aurci
-[GitHub Releases]: {{ site.github.owner_url }}/aurci/releases
-
+[Build Status]:    https://travis-ci.com/{{ site.github.owner_name }}/{{ site.github.project_title }}.svg?branch=master
+[GitHub Releases]: {{ site.github.owner_url }}/{{ site.github.project_title }}/releases
+[Travis CI]:       https://travis-ci.com/{{ site.github.owner_name }}/{{ site.github.project_title }}
+[Travis CI GitHub App]: https://travis-ci.com
