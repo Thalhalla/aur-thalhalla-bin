@@ -20,9 +20,14 @@ Server = {{ site.github.owner_url }}/{{ site.github.project_title }}/releases/do
 Then on the command line:
 
 ```bash
-pacman -Syu                                # Refresh package database.
-pacman -Sl {{ site.github.project_title }} # Show packages in repository.
-pacman -S {package}                        # Install a package.
+# Refresh package database
+pacman -Syu
+
+# Show packages in repository
+pacman -Sl {{ site.github.project_title }}
+
+# Install a package
+pacman -S {package}
 ```
 
 **NOTE:** List of currently maintained packages can change at any moment.
