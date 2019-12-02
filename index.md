@@ -27,7 +27,7 @@ pacman -Syu
 pacman -Sl {{ site.github.project_title }}
 
 # Install a package
-pacman -S {package}
+pacman -S <package_name>
 ```
 
 ## Upstream contributions
@@ -44,3 +44,4 @@ If you want to contribute back some new feature you need:
 [AUR]:              https://aur.archlinux.org
 [Build Status]:     https://travis-ci.com/{{ site.github.owner_name }}/{{ site.github.project_title }}.svg?branch=master
 [Travis CI]:        https://travis-ci.com/{{ site.github.owner_name }}/{{ site.github.project_title }}
+[GitHub Releases]: {{ site.github.owner_url }}/{{ site.github.project_title }}/releases
