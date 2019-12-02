@@ -29,7 +29,7 @@ pkgdeps+=("${pkglist[@]}")
 cd "bin"
 while read pkgpackage; do
   repo-remove "${pkgrepo}.db.tar.gz" $pkgpackage
-done < <(comm -23 <(pacman -Sl $pkgrepo | cut -d" " -f2 | sort) <(printf "%s" "${pkgdeps[@]}" | sort))
+done < <(comm -23 <(pacman -Slq $pkgrepo | sort) <(printf "%s" "${pkgdeps[@]}" | sort))
 cd ".."
 
 # Get package gpg keys.
