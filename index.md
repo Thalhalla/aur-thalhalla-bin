@@ -30,6 +30,12 @@ pacman -Sl {{ site.github.project_title }}
 pacman -S <package_name>
 ```
 
+## Custom settings
+
+If you need to customize the build, you can add your own `makepkg.conf`
+in the root directory of your repository, the Travis script will copy and use it
+during the build process.
+
 ## Upstream contributions
 
 If you want to contribute back some new feature you need:
