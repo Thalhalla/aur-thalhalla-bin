@@ -17,7 +17,6 @@ libffado-svn
 jack2-git
 cadence-git
 qjackctl-git
-ubuntustudio-controls-git
 pavucontrol-compact-git
 
 
@@ -117,6 +116,10 @@ polybar-git
 
 ## dependency conflift problem
 #ingen-git
+
+## jack/jack2 conflict
+#ubuntustudio-controls-git
+
 
 ## build problem on Arch
 #beast-git
