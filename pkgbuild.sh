@@ -46,4 +46,18 @@ if (( ${#pkglist[@]} )); then
   aur sync -d $pkgrepo --root "${HOME}/bin" -n ${pkglist[@]}
 fi
 
+# Workaround fo GH releases because colon in names not permitted
+if [[ ${DEPLOY_CUSTOM} != 1 ]]; then
+  cd "bin"
+  for package in *.tar.xz; do
+    if [[ ${package} == *':'* ]]; then
+      echo "renaming ${package} and add it back to db..."
+      newname=${package/:/.}
+      mv -- ${package} ${newname}
+      repo-add "${pkgrepo}.db.tar.gz" ${newname}
+    fi
+  done
+  cd ..
+fi
+
 { set +ex; } 2>/dev/null
