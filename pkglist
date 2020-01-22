@@ -41,3 +41,96 @@ vcvrack-git
 
 # daw
 zrythm-debug-git
+
+
+
+## 3
+
+# collections
+dpf-plugins-git
+gxplugins-lv2-git
+invada-studio-plugins-lv2
+tal-plugins
+
+# synth
+surge-synthesizer-git
+bristol
+remid.lv2-git
+stegosaurus-lv2-git
+
+# effects
+hybridreverb-git
+dragonfly-reverb-git
+wolf-shaper-git
+bshapr-git
+bslizr-git
+bchoppr-git
+
+# in a class of it's own
+moony-lv2-git
+
+# samplers etc.
+loopp-git
+drmr-falktx-git
+drumgizmo-git
+ninjas-git
+ninjas2-git
+konfyt-git
+
+
+
+## 4
+
+# squencers
+sequencer64-git
+bsequencer-git
+ossia-score-git
+
+# midi etc 
+midimonster-git
+
+# audio formats and tools
+alac-git
+flacsync-git
+fmedia-git
+streamlink-git
+
+# audio file naming/tagging
+picard-git
+picard-plugins-git
+
+# misc
+broot
+imlib2-webp-git
+polybar-git
+
+
+
+## not working atm
+
+## build problem - https://github.com/kmatheussen/radium/issues/1235
+#radium
+
+## too big to build
+#mixxx-git
+
+## dependency conflift problem
+#ingen-git
+
+## build problem on Arch
+#beast-git
+
+# missing a dependency for rpc.h
+#pd-extended
+
+## output log too long
+#pd-l2ork
+
+## missing dependencies
+#lmms-git
+
+## nah like, too big :)
+# ardour-git
+
+## missing deps
+#pizmidi-git
