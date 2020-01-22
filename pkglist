@@ -84,7 +84,7 @@ konfyt-git
 # squencers
 sequencer64-git
 bsequencer-git
-ossia-score-git
+
 
 # midi etc 
 midimonster-git
@@ -128,6 +128,9 @@ polybar-git
 
 ## missing dependencies
 #lmms-git
+
+## 
+#ossia-score-git
 
 ## nah like, too big :)
 # ardour-git
