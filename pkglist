@@ -56,6 +56,7 @@ wolf-shaper-git
 bshapr-git
 bslizr-git
 bchoppr-git
+bjumblr.lv2-git
 
 # in a class of it's own
 moony-lv2-git
@@ -68,14 +69,9 @@ ninjas-git
 ninjas2-git
 konfyt-git
 
-
-
-
-
 # squencers
 sequencer64-git
 bsequencer-git
-
 
 # midi etc 
 midimonster-git
