@@ -19,10 +19,6 @@ cadence-git
 qjackctl-git
 pavucontrol-compact-git
 
-
-
-## 2
-
 # session management
 raysession-git
 
@@ -31,11 +27,6 @@ carla-git
 synthpod-git
 non-mixer-lv2-git
 #guitarix-git
-
-# broken atm
-##purr-data
-
-
 element-git
 vcvrack-git
 
@@ -44,7 +35,7 @@ zrythm-debug-git
 
 
 
-## 3
+## 2
 
 # collections
 dpf-plugins-git
@@ -79,7 +70,7 @@ konfyt-git
 
 
 
-## 4
+
 
 # squencers
 sequencer64-git
@@ -137,3 +128,6 @@ polybar-git
 
 ## missing deps
 #pizmidi-git
+
+# broken atm
+##purr-data
