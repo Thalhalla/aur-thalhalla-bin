@@ -93,6 +93,12 @@ polybar-git
 
 
 
+# visual
+projectm-git
+
+
+
+
 ## not working atm
 
 ## build problem - https://github.com/kmatheussen/radium/issues/1235
