@@ -114,7 +114,7 @@ projectm-git
 #beast-git
 
 # missing a dependency for rpc.h
-pd-extended
+#pd-extended
 
 ## output log too long
 #pd-l2ork
