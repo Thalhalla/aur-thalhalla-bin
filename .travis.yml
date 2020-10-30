@@ -7,6 +7,7 @@ services:
   - docker
 before_install:
   #- TRAVIS_REPO_SLUG_L=$(echo "$a" | awk '{print tolower($0)}') docker build -t $TRAVIS_REPO_SLUG_L .
+  - export TRAVIS_REPO_SLUG_L=$(echo "$TRAVIS_REPO_SLUG" | awk '{print tolower($0)}')
   - echo "$TRAVIS_REPO_SLUG_L"
   - docker build -t $TRAVIS_REPO_SLUG_L .
   - docker run -d -t --name aurci $TRAVIS_REPO_SLUG_L bash
@@ -20,6 +21,9 @@ before_script:
   - docker cp pkglist aurci:/home/pkguser
   - docker cp pkgkeys aurci:/home/pkguser
 script:
+  - echo "$TRAVIS_REPO_SLUG_L"
+  - export TRAVIS_REPO_SLUG_L=$(echo "$TRAVIS_REPO_SLUG" | awk '{print tolower($0)}')
+  - echo "$TRAVIS_REPO_SLUG_L"
   - docker exec aurci bash pkgrepository.sh $TRAVIS_REPO_SLUG_L $TRAVIS_TAG
   - docker exec aurci bash pkgbuild.sh $TRAVIS_REPO_SLUG_L $TRAVIS_BUILD_ID
 before_deploy:
