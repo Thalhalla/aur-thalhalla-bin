@@ -2,15 +2,13 @@ dist: bionic
 language: generic
 env:
   - TRAVIS_TAG=repository
-  - TRAVIS_REPO_SLUG_L=$(echo "$TRAVIS_REPO_SLUG" | awk '{print tolower($0)}')
 services:
   - docker
 before_install:
-  #- TRAVIS_REPO_SLUG_L=$(echo "$a" | awk '{print tolower($0)}') docker build -t $TRAVIS_REPO_SLUG_L .
-  - export TRAVIS_REPO_SLUG_L=$(echo "$TRAVIS_REPO_SLUG" | awk '{print tolower($0)}')
-  - echo "$TRAVIS_REPO_SLUG_L"
-  - docker build -t $TRAVIS_REPO_SLUG_L .
-  - docker run -d -t --name aurci $TRAVIS_REPO_SLUG_L bash
+  - export TRAVIS_REPO_SLUG=$(echo "$TRAVIS_REPO_SLUG" | awk '{print tolower($0)}')
+  #- echo "$TRAVIS_REPO_SLUG"
+  - docker build -t $TRAVIS_REPO_SLUG .
+  - docker run -d -t --name aurci $TRAVIS_REPO_SLUG bash
 install:
   - docker cp pkgrepository.sh aurci:/home/pkguser
   - docker cp pkgbuild.sh aurci:/home/pkguser
@@ -21,11 +19,11 @@ before_script:
   - docker cp pkglist aurci:/home/pkguser
   - docker cp pkgkeys aurci:/home/pkguser
 script:
-  - echo "$TRAVIS_REPO_SLUG_L"
-  - export TRAVIS_REPO_SLUG_L=$(echo "$TRAVIS_REPO_SLUG" | awk '{print tolower($0)}')
-  - echo "$TRAVIS_REPO_SLUG_L"
-  - docker exec aurci bash pkgrepository.sh $TRAVIS_REPO_SLUG_L $TRAVIS_TAG
-  - docker exec aurci bash pkgbuild.sh $TRAVIS_REPO_SLUG_L $TRAVIS_BUILD_ID
+  - echo "$TRAVIS_REPO_SLUG"
+  - export TRAVIS_REPO_SLUG=$(echo "$TRAVIS_REPO_SLUG" | awk '{print tolower($0)}')
+  - echo "$TRAVIS_REPO_SLUG"
+  - docker exec aurci bash pkgrepository.sh $TRAVIS_REPO_SLUG $TRAVIS_TAG
+  - docker exec aurci bash pkgbuild.sh $TRAVIS_REPO_SLUG $TRAVIS_BUILD_ID
 before_deploy:
   - docker cp aurci:/home/pkguser/bin $TRAVIS_TAG
 deploy:
