@@ -39,7 +39,7 @@ sudo tee -a "/etc/pacman.conf" << EOF
 
 [aurutilsci]
 SigLevel = Optional TrustAll
-Server = https://github.com/localnet/aurutilsci/releases/download/repository
+Server = https://github.com/Thalhalla/aurutilsci/releases/download/repository
 
 Include = /etc/pacman.d/${pkgrepo}
 EOF
